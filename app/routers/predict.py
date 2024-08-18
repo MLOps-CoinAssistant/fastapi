@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
-@router.get(
+@router.post(
     "/btc",
     response_model=BaseResponse[List[BtcPredictionResp]],
     responses={400: {"model": ErrorResponse}},
@@ -31,7 +31,7 @@ async def predict(
     return HttpResponse(content=response_content)
 
 
-@router.get(
+@router.post(
     "/btc/product",
     response_model=BaseResponse[List[BtcPredictionResp]],
     responses={400: {"model": ErrorResponse}},
