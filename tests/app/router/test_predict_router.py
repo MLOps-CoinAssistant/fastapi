@@ -26,7 +26,7 @@ async def test_predict_200(
     container.predict_service.override(predict_service_mock)
 
     url = "/v1/predict/btc"
-    response = await async_client.get(url)
+    response = await async_client.post(url)
     json_response = response.json()
 
     assert response.status_code == 200
@@ -77,7 +77,7 @@ async def test_predict_product_200(
     container.predict_service.override(predict_service_mock)
 
     url = "/v1/predict/btc/product"
-    response = await async_client.get(url)
+    response = await async_client.post(url)
     json_response = response.json()
     print(f"json_response : {json_response}")
 
@@ -126,7 +126,7 @@ async def test_predict_400(
         container.predict_service.override(predict_service_mock)
 
         url = "/v1/predict/btc"
-        response = await async_client.get(url)
+        response = await async_client.post(url)
         json_response = response.json()
 
         assert response.status_code == 400
@@ -175,7 +175,7 @@ async def test_predict_product_400(
         container.predict_service.override(predict_service_mock)
 
         url = "/v1/predict/btc/product"
-        response = await async_client.get(url)
+        response = await async_client.post(url)
         json_response = response.json()
 
         assert response.status_code == 400
