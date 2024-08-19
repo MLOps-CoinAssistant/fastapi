@@ -21,6 +21,25 @@ class Settings(BaseSettings):
     DB_NAME: str = os.getenv("DB_DEFAULT_NAME")
     UPBIT_ACCESS_KEY: str = os.getenv("UPBIT_ACCESS_KEY")
     UPBIT_SECRET_KEY: str = os.getenv("UPBIT_SECRET_KEY")
+    AWS_ACCESS_KEY_ID: str
+    AWS_SECRET_ACCESS_KEY: str
+    MLFLOW_TRACKING_URI: str
+    MLFLOW_TRACKING_URI_LOCAL: str
+    MLFLOW_TRACKING_PORT: str
+    MLFLOW_S3_ENDPOINT_URL: str
+    MLFLOW_S3_ENDPOINT_MAIN_PORT: str
+    MLFLOW_S3_ENDPOINT_SUB_PORT: str
+    MINIO_ROOT_USER: str
+    MINIO_ROOT_PASSWORD: str
+    MLFLOW_DB_HOST: str
+    DB_DEFAULT_NAME: str
+    ARTIFACT_ROOT: str
+    MLFLOW_SERVER_HOST: str
+    ARTIFACT_MODEL_REGISTRY_PATH: str
+    AIRFLOW_SMTP_USER: str
+    SMTP_MAIL_ADDRESS: str
+    REDIS_HOST: str
+    UVICORN_PORT: str
 
     class Config:
         env_file = ".env"
