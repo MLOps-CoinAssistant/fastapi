@@ -1,8 +1,8 @@
-name: Build and Deploy to Cloud Run
+name: test
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "feat/ci-cd" ]
 
 env:
   PROJECT_ID: ${{ secrets.project_id }} # TODO: update Google Cloud project id
